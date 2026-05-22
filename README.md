@@ -61,11 +61,17 @@ export const API_BASE_URL = "http://<IP-de-tu-maquina>:8000";
 
 ### Endpoints que usa la app
 
-| Método | Ruta | Uso en la app |
-|--------|------|---------------|
-| `GET` | `/health` | Verificar que la API esté activa |
-| `POST` | `/predict` | Enviar imagen → recibir detecciones en JSON |
-| `POST` | `/predict/image` | Enviar imagen → recibir imagen anotada (PNG) |
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| `GET` | `/health` | Verifica el estado de la API, conexión y modelo YOLO cargado |
+| `GET` | `/stats/totales` | Retorna el total acumulado de canicas detectadas por clase |
+| `GET` | `/stats/historial` | Retorna historial paginado de detecciones registradas |
+| `GET` | `/classes` | Lista las clases detectables del modelo YOLO |
+| `GET` | `/metrics` | Retorna métricas generales de inferencia y rendimiento |
+| `POST` | `/predict` | Recibe imagen → retorna JSON con detecciones |
+| `POST` | `/predict/image` | Recibe imagen → retorna PNG anotado |
+| `POST` | `/predict/video` | Recibe video → retorna MP4 anotado |
+| `POST` | `/predict/camera` | Procesa captura de cámara → retorna detecciones |
 
 ---
 
